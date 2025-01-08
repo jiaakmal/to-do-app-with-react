@@ -1,42 +1,84 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+
+.to-do-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 120px;
+  max-width: 400px;
+  margin:  120px auto 0 auto;
+}
+.title{
+  padding: 20px 30px;
+  border: 2px solid var(--purple);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+
+}
+form{
+margin-top: 50px;
+width: 100%;
+display: flex;
+}
+input{
+  flex:1;
+  padding: 10px;
+  border-radius:10px;
+  border: 2px solid var(--purple);
+  background: var(--secondaryBackground);
+}
+button{
+
+  height: 50px;
+  width: 50px;
+  border-radius: 50px;
+  border: 2px solid var(--purple);
+  background: var(--purple);
+  color: var(--text);
+  cursor: pointer;
+  font-weight: bold;
+  margin-left: 10px;
+  font-size:23px ;
+}
+ul{
+list-style: none;
+}
+.task-list{
+display: flex;
+flex-direction: column;
+gap:10px;
+margin-top:30px ;
+width: 100%;
+}
+.taskItem{
+display: flex;
+padding: 10px;
+background-color: var(--secondaryBackground);
+border-radius: 10px;
+justify-content: space-between;
+width: 100%;
+}
+.task{
+display: flex;
+align-items: center;
+gap: 10px;
+}
+.task input{
+height: 20px;
+width: 20px;
+}
+.icons img{
+cursor: pointer;
+height: 25px;
+width: 25px;
+transition: transform 0.2s ease;
+margin:0 10px;
+}
+.completed p{
+text-decoration: line-through;
+color: var(--teal);
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
-}
