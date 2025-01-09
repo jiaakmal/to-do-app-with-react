@@ -1,14 +1,13 @@
-
-.to-do-container{
+.to-do-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   margin-top: 120px;
-  max-width: 400px;
-  margin:  120px auto 0 auto;
+  max-width: 600px;
+  margin: 120px auto 0 auto;
 }
-.title{
+.title {
   padding: 20px 30px;
   border: 2px solid var(--purple);
   border-radius: 10px;
@@ -16,69 +15,79 @@
   flex-direction: column;
   gap: 20px;
   width: 100%;
-
+  align-items: center;
+  font-size: 22px;
 }
-form{
-margin-top: 50px;
-width: 100%;
-display: flex;
+form {
+  margin-top: 50px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
-input{
-  flex:1;
+input {
+  flex: 1;
   padding: 10px;
-  border-radius:10px;
+  border-radius: 10px;
   border: 2px solid var(--purple);
   background: var(--secondaryBackground);
 }
-button{
-
-  height: 50px;
-  width: 50px;
-  border-radius: 50px;
+button {
+  height: 47px;
+  width: 134px;
+  align-self: center;
+  border-radius: 12px;
   border: 2px solid var(--purple);
   background: var(--purple);
   color: var(--text);
   cursor: pointer;
   font-weight: bold;
   margin-left: 10px;
-  font-size:23px ;
+  font-size: 23px;
 }
-ul{
-list-style: none;
+ul {
+  list-style: none;
 }
-.task-list{
-display: flex;
-flex-direction: column;
-gap:10px;
-margin-top:30px ;
-width: 100%;
+.task-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 30px;
+  width: 100%;
 }
-.taskItem{
-display: flex;
-padding: 10px;
-background-color: var(--secondaryBackground);
-border-radius: 10px;
-justify-content: space-between;
-width: 100%;
-}
-.task{
-display: flex;
-align-items: center;
-gap: 10px;
-}
-.task input{
-height: 20px;
-width: 20px;
-}
-.icons img{
-cursor: pointer;
-height: 25px;
-width: 25px;
-transition: transform 0.2s ease;
-margin:0 10px;
-}
-.completed p{
-text-decoration: line-through;
-color: var(--teal);
+.taskItem {
+  display: flex;
+  padding: 10px;
+  background-color: var(--secondaryBackground);
+  border-radius: 10px;
+  justify-content: space-between;
+  width: 100%;
+  flex-direction: column;
+    align-items: flex-start;
+    row-gap: 20px;
 }
 
+.task {
+  display: flex
+;
+    gap: 12px;
+    gap: 15px;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    border-bottom: 2px solid black;
+}
+.task input {
+  height: 20px;
+  width: 20px;
+}
+.icons img {
+  cursor: pointer;
+  height: 25px;
+  width: 25px;
+  transition: transform 0.2s ease;
+  margin: 0 10px;
+}
+.completed p {
+  text-decoration: line-through;
+  color: var(--teal);
+}

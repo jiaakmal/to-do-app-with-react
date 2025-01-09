@@ -1,24 +1,41 @@
-import React, { useState } from 'react';
-import TaskList from './components/TaskList';
-import './App.css';
+import React, { useState } from "react";
+import TaskList from "./components/TaskList";
+import "./App.css";
 
- function App() {
+function App() {
   const [tasks, setTasks] = useState([]);
+  const [title, setTitle] = useState("");
+  const [category, setCategory] = useState("");
+  const [description, setDescription] = useState("");
 
-  const addTask = (text) => {
-    setTasks([...tasks, { text, completed: false }]);
+  const addTask = (title, category, description) => {
+    setTasks([...tasks, { title, category, description, completed: false }]);
   };
 
+  // const handleAddTask = () => {
+  //   addTask(title, category, description);
+  //   setTitle("");
+  //   setCategory("");
+  //   setDescription("");
+  // };
+
   const toggleCompleted = (index) => {
-    const newTasks = tasks.map((task, i) => 
+    const newTasks = tasks.map((task, i) =>
       i === index ? { ...task, completed: !task.completed } : task
     );
     setTasks(newTasks);
   };
 
-  const editTask = (index, newText) => {
-    const newTasks = tasks.map((task, i) => 
-      i === index ? { ...task, text: newText } : task
+  const editTask = (index, newTitle, newCategory, newDescription) => {
+    const newTasks = tasks.map((task, i) =>
+      i === index
+        ? {
+            ...task,
+            title: newTitle,
+            category: newCategory,
+            description: newDescription,
+          }
+        : task
     );
     setTasks(newTasks);
   };
@@ -34,27 +51,50 @@ import './App.css';
         <h1>To Do List</h1>
         <p>Manage your work tasks here</p>
       </div>
-      <form className="to-do-form" onSubmit={(e) => {
-        e.preventDefault();
-        const taskInput = e.target.elements['task-input'];
-        if (taskInput.value) {
-          addTask(taskInput.value);
-          taskInput.value = '';
-        } else {
-          alert("Please enter a task");
-        }
-      }}>
-        <input type="text" id="task-input" placeholder="Enter a task" />
+
+      <form
+        className="to-do-form"
+        onSubmit={(e) => {
+          e.preventDefault();
+          const titleInput = e.target.elements["title-input"];
+          const categoryInput = e.target.elements["category-input"];
+          const descriptionInput = e.target.elements["description-input"];
+
+          if (
+            titleInput.value &&
+            categoryInput.value &&
+            descriptionInput.value
+          ) {
+            addTask(
+              titleInput.value,
+              categoryInput.value,
+              descriptionInput.value
+            );
+            titleInput.value = "";
+            categoryInput.value = "";
+            descriptionInput.value = "";
+          } else {
+            alert("Please enter all fields");
+          }
+        }}
+      >
+        <input type="text" id="title-input" placeholder="Enter title" />
+        <input type="text" id="category-input" placeholder="Enter category" />
+        <input
+          type="text"
+          id="description-input"
+          placeholder="Enter description"
+        />
         <button type="submit">+</button>
       </form>
-      <TaskList 
-        tasks={tasks} 
-        toggleCompleted={toggleCompleted} 
-        editTask={editTask} 
-        deleteTask={deleteTask} 
+      <TaskList
+        tasks={tasks}
+        toggleCompleted={toggleCompleted}
+        editTask={editTask}
+        deleteTask={deleteTask}
       />
     </div>
   );
-};
+}
 
 export default App;
