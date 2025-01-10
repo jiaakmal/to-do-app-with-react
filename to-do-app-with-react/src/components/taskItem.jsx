@@ -26,9 +26,9 @@ const TaskItem = ({ task, index, toggleCompleted, editTask, deleteTask }) => {
               checked={task.completed}
               onChange={() => toggleCompleted(index)}
             />
-            <h3>{task.title}</h3>
-            <p>{task.category}</p>
-            <p>{task.description}</p>
+            <h3>Task Title: {task.title}</h3>
+            <p>Category: {task.category}</p>
+            <p>Description: {task.description}</p>
             <div className="icons">
               <img
                 src={editImg}

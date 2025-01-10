@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
+// import { useParams, useNavigate } from 'react-router-dom';
 
 const EditTask = ({ task, index, editTask }) => {
   const [newTitle, setNewTitle] = useState(task.title);
   const [newCategory, setNewCategory] = useState(task.category);
   const [newDescription, setNewDescription] = useState(task.description);
+//   const navigate = useNavigate();
 
   const handleEdit = () => {
     editTask(index, newTitle, newCategory, newDescription);
