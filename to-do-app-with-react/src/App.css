@@ -32,6 +32,12 @@ input {
   border: 2px solid var(--purple);
   background: var(--secondaryBackground);
 }
+textarea{
+  padding: 10px;
+  border-radius: 10px;
+  border: 2px solid var(--purple);
+  background: var(--secondaryBackground);
+}
 button {
   height: 47px;
   width: 134px;
