@@ -18,6 +18,11 @@
   align-items: center;
   font-size: 22px;
 }
+.home {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
 form {
   margin-top: 50px;
   width: 100%;
@@ -32,7 +37,7 @@ input {
   border: 2px solid var(--purple);
   background: var(--secondaryBackground);
 }
-textarea{
+textarea {
   padding: 10px;
   border-radius: 10px;
   border: 2px solid var(--purple);
@@ -61,6 +66,11 @@ ul {
   margin-top: 30px;
   width: 100%;
 }
+.no-items {
+  margin-block: 40px;
+  padding: 10px;
+  font-size: 30px;
+}
 .taskItem {
   display: flex;
   padding: 10px;
@@ -70,23 +80,23 @@ ul {
   width: 100%;
   flex-direction: column;
   flex: 1;
-    row-gap: 20px;
+  row-gap: 20px;
 }
 
 .task {
   display: flex;
   width: 100%;
-    gap: 12px;
-    gap: 15px;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    border-bottom: 2px solid black;
+  gap: 12px;
+  gap: 15px;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  border-bottom: 2px solid black;
 }
 .task input {
   height: 20px;
   width: 20px;
 }
-.icons{
+.icons {
   display: flex;
   justify-content: flex-end;
   gap: 10px;
@@ -101,4 +111,9 @@ ul {
 .completed p {
   text-decoration: line-through;
   color: var(--teal);
+}
+a {
+  background-color: var(--purple);
+  text-decoration: none;
+  color: var(--text);
 }

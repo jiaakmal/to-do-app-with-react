@@ -1,0 +1,26 @@
+.to-do-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 30px;
+  }
+  
+  .to-do-form input,
+  .to-do-form textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .to-do-form button {
+    padding: 10px;
+    background-color: var(--primaryColor);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .to-do-form button:hover {
+    background-color: var(--primaryColorHover);
+  }

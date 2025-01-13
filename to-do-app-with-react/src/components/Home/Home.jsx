@@ -1,6 +1,7 @@
 import React, { useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
-import { TaskContext } from './TaskContext';
+import { TaskContext } from '../../UseContext/TaskContext';
+import './Home.css';
 
 const Home = () => {
   const { addTask } = useContext(TaskContext);
@@ -21,7 +22,7 @@ const Home = () => {
   };
 
   return (
-    <div>
+    <div className='home'>
       <form className="to-do-form" onSubmit={handleAddTask}>
         <input
           type="text"
@@ -42,7 +43,7 @@ const Home = () => {
         />
         <button type="submit">Save Task</button>
       </form>
-      <Link to="/tasks">View Tasks</Link>
+      <button><Link to="/tasks">View Tasks</Link></button>
     </div>
   );
 };

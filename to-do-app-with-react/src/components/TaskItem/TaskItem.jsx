@@ -1,8 +1,8 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import DeleteTask from './DeleteTask';
-
-import editImg from '../assets/images/edit.png';
+import DeleteTask from '../DeleteTask/DeleteTask';
+import './TaskItem.css';
+import editImg from '../../assets/images/edit.png';
 
 const TaskItem = ({ task, index, toggleCompleted, deleteTask }) => {
   const navigate = useNavigate();

@@ -1,13 +1,12 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Home from './components/Home';
-import TaskList from './components/TaskList';
-import EditTask from './components/EditTask';
-import DeleteTask from './components/DeleteTask';
+import Home from './components/Home/Home';
+import TaskList from './components/TaskList/TaskList';
+import EditTask from './components/EditTask/EditTask';
+import DeleteTask from './components/DeleteTask/DeleteTask';
 import './App.css';
-import Header from './components/Header';
-import { TaskProvider } from './components/TaskContext';
-
+import Header from './components/Header/Header';
+import { TaskProvider } from '../src/UseContext/TaskContext';
 function App() {
   return (
     <TaskProvider>

@@ -1,6 +1,7 @@
 import React, { useState, useContext } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { TaskContext } from './TaskContext';
+import { TaskContext } from '../../UseContext/TaskContext';
+
 
 const EditTask = () => {
   const { tasks, editTask } = useContext(TaskContext);
