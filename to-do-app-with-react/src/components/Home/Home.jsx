@@ -1,49 +1,54 @@
-import React, { useState, useContext } from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { useForm } from 'react-hook-form';
+import { z } from 'zod';
+import { zodResolver } from '@hookform/resolvers/zod';
 import { TaskContext } from '../../UseContext/TaskContext';
 import './Home.css';
 
+const taskSchema = z.object({
+  title: z.string().min(1, "Title is required"),
+  category: z.string().min(1, "Category is required"),
+  description: z.string().min(1, "Description is required"),
+});
+
 const Home = () => {
   const { addTask } = useContext(TaskContext);
-  const [title, setTitle] = useState('');
-  const [category, setCategory] = useState('');
-  const [description, setDescription] = useState('');
+  const { register, handleSubmit, formState: { errors }, reset } = useForm({
+    resolver: zodResolver(taskSchema),
+  });
 
-  const handleAddTask = (e) => {
-    e.preventDefault();
-    if (title && category && description) {
-      addTask(title, category, description);
-      setTitle('');
-      setCategory('');
-      setDescription('');
-    } else {
-      alert("Please enter all fields");
-    }
+  const onSubmit = (data) => {
+    addTask(data.title, data.category, data.description);
+    reset();
   };
 
   return (
-    <div className='home'>
-      <form className="to-do-form" onSubmit={handleAddTask}>
+    <div>
+      <form className="to-do-form" onSubmit={handleSubmit(onSubmit)}>
         <input
           type="text"
-          value={title}
-          onChange={(e) => setTitle(e.target.value)}
+          {...register('title')}
           placeholder="Enter title"
         />
+        {errors.title && <div className="error">{errors.title.message}</div>}
+        
         <input
           type="text"
-          value={category}
-          onChange={(e) => setCategory(e.target.value)}
+          {...register('category')}
           placeholder="Enter category"
         />
+        {errors.category && <div className="error">{errors.category.message}</div>}
+        
         <textarea
-          value={description}
-          onChange={(e) => setDescription(e.target.value)}
+          {...register('description')}
           placeholder="Enter description"
         />
+        {errors.description && <div className="error">{errors.description.message}</div>}
+        
         <button type="submit">Save Task</button>
       </form>
-      <button><Link to="/tasks">View Tasks</Link></button>
+      <Link to="/tasks">View Tasks</Link>
     </div>
   );
 };
