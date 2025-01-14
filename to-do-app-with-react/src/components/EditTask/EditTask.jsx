@@ -23,7 +23,7 @@ const EditTask = () => {
   };
 
   return (
-    <div className='to-do-form'>
+    <div className='to-do-form-edit'>
       <input type="text" value={newTitle} onChange={(e) => setNewTitle(e.target.value)} placeholder="Edit title" />
       <input type="text" value={newCategory} onChange={(e) => setNewCategory(e.target.value)} placeholder="Edit category" />
       <textarea value={newDescription} onChange={(e) => setNewDescription(e.target.value)} placeholder="Edit description" />

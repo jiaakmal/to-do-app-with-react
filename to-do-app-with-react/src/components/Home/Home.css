@@ -1,26 +1,42 @@
 .to-do-form {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    margin-top: 30px;
-  }
-  
-  .to-do-form input,
-  .to-do-form textarea {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  
-  .to-do-form button {
-    padding: 10px;
-    background-color: var(--primaryColor);
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .to-do-form button:hover {
-    background-color: var(--primaryColorHover);
-  }
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 30px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.to-do-form input,
+.to-do-form textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.to-do-form button {
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.to-do-form button:hover {
+  background-color: #0056b3;
+}
+
+.to-do-form a {
+  text-align: center;
+  color: #007bff;
+  text-decoration: none;
+}
+
+.to-do-form a:hover {
+  text-decoration: underline;
+}
